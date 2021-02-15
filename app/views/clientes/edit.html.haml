@@ -1,0 +1,9 @@
+.page-header
+  = link_to clientes_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =I18n.t(:back)
+
+  %h1
+    =I18n.t(:editing_cliente)
+
+= render 'form'

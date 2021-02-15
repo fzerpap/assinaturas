@@ -1,0 +1,12 @@
+.page-header
+  = link_to clientes_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    =I18n.t(:back)
+  %h1 Verificando o CPF do Cliente
+= form_tag '/clientes/verificar', method: :post, html: { class: "form-horizontal", role: "form", id: 'form-search' } do 
+  .form-group
+    = label_tag :cpf_cliente, I18n.t(:cpf_cliente), class: 'col-sm-2 control-label'
+    .col-sm-2
+      = number_field_tag :cpf_cliente, "", class: 'form-control'
+    .col-sm-2
+      = submit_tag I18n.t(:verificar), class: 'btn btn-primary' 

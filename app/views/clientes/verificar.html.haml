@@ -1,0 +1,24 @@
+.page-header
+  = link_to new_assinatura_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    =I18n.t(:new_assinatura)
+  / Dados do cliente  
+  .row
+    .form-group
+      = label_tag :cpf, I18n.t(:cpf), class: 'col-sm-2 control-label'
+      .col-sm-4
+        = text_field_tag :cpf, @cliente.cpf, class: 'form-control', readonly: true
+    .form-group
+      = label_tag :nome, I18n.t(:nome_cliente), class: 'col-sm-2 control-label'
+      .col-sm-4
+        = text_field_tag :nome, @cliente.nome, class: 'form-control', readonly: true
+    .form-group
+      = label_tag :email,  I18n.t(:email), class: 'col-sm-2 control-label'
+      .col-sm-4
+        = text_field_tag :email, @cliente.email, class: 'form-control', readonly: true 
+  / Assinaturas do cliente
+  .row
+    %h1
+      =I18n.t(:listing_assinaturas)
+    = render '/assinaturas/table_assinaturas'
+  

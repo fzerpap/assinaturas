@@ -1,0 +1,38 @@
+%nav.navbar-default.navbar-static-side{:role => "navigation"}
+  .sidebar-collapse
+    %ul#side-menu.nav
+      %li.nav-header
+        .dropdown.profile-element
+          %span
+            = image_tag 'logo_pitzi.png', height: 60, width: 150
+          %a.dropdown-toggle{"data-toggle" => "dropdown", :href => "#"}
+            %span.clear
+              %span.block.m-t-xs
+                %strong.font-bold
+                  %h3 Assinaturas
+
+        .logo-element
+          VL
+      %li{class: is_active_controller('marcas')}
+        = link_to marcas_path do
+          %i.fa.fa-map-marker
+          %span.nav-label
+            = I18n.t(:marcas)
+      %li{class: is_active_controller('modelos')}
+        = link_to modelos_path do
+          %i.fa.fa-map-marker
+          %span.nav-label
+            = I18n.t(:modelos)
+      %li{class: is_active_controller('clientes')}
+        = link_to clientes_path do
+          %i.fa.fa-map-marker
+          %span.nav-label
+            = I18n.t(:clientes)
+      %li{class: is_active_controller('assinaturas')}
+        = link_to assinaturas_path do
+          %i.fa.fa-map-marker
+          %span.nav-label
+            = I18n.t(:assinaturas)
+
+
+ 

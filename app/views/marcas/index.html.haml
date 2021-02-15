@@ -1,0 +1,29 @@
+.page-header
+  = link_to new_marca_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    =I18n.t(:new_marca)
+  %h1
+    =I18n.t(:listing_marcas)
+.col-sm-6.table-responsive
+  %table.table.table-striped.table-bordered.table-hover#dttb
+    %thead
+      %tr
+        %th
+          =I18n.t(:nome_marca)
+        %th
+
+    %tbody
+      - @marcas.each do |marca|
+        %tr
+          /%td= marca.attributes[:attributes].nome
+          %td= marca.nome
+          %td
+            = link_to edit_marca_path(marca) do
+              %i.fa.fa-pencil
+              =I18n.t(:edit)
+              &nbsp;
+              &nbsp;
+            = link_to marca, data: { confirm: I18n.t(:are_you_sure_destroy_marca) }, method: :delete do
+              %i.fa.fa-trash
+              =I18n.t(:destroy)
+

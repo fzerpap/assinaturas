@@ -1,0 +1,22 @@
+= form_for @modelo, html: { class: "form-horizontal", role: "form", id: 'form-modelo'} do |f|
+  -if @modelo.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@modelo.errors.count, "error")} prohibited this modelo from being saved:"
+
+      %ul
+        - @modelo.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label I18n.t(:nome_marca), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.select :marca_id, options_from_collection_for_select(Marca.all, :id, :nome, selected: f.object.marca.present? ? f.object.marca.id : nil), { include_blank: true }, {class: 'form-control'}
+  .form-group
+    = f.label I18n.t(:nome_modelo), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :nome, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit class: 'btn btn-primary'

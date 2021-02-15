@@ -1,0 +1,32 @@
+.page-header
+  = link_to new_modelo_path, class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-plus
+    =I18n.t(:new_modelo)
+  %h1
+    =I18n.t(:listing_modelos)
+.col-sm-6.table-responsive
+  %table.table.table-striped.table-bordered.table-hover#dttb
+    %thead
+      %tr
+        %th
+          =I18n.t(:nome_marca)
+        %th
+          =I18n.t(:nome_modelo)
+        %th
+
+    %tbody
+      - @modelos.each do |modelo|
+        %tr
+          /%td= modelo.attributes[:attributes].nome
+          %td= modelo.marca.nome
+          %td= modelo.nome
+          %td
+            = link_to edit_modelo_path(modelo) do
+              %i.fa.fa-pencil
+              =I18n.t(:edit)
+              &nbsp;
+              &nbsp;
+            = link_to modelo, data: { confirm: I18n.t(:are_you_sure_destroy_modelo) }, method: :delete do
+              %i.fa.fa-trash
+              =I18n.t(:destroy)
+

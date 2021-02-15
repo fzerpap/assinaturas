@@ -1,0 +1,94 @@
+pt:
+  date:
+    formats:
+      default: "%d/%m/%Y"
+  time:
+    formats:
+      default: "%d/%m/%Y %H:%M"
+
+# Marca
+  marca: 'Marca'
+  marcas: 'Marcas'
+  new_marca: 'Nova marca'
+  listing_marcas: 'Lista de marcas de Telefone'
+  editing_marca: 'Editando a marca'
+  nome_marca: 'Nome da marca'
+  nome_marca_abr: 'Marca'
+  notice_marca_create: 'A marca foi criada com sucesso'
+  notice_marca_update: 'A marca foi atualizada com sucesso'
+  notice_marca_destroy: 'A marca foi exluida com sucesso'
+  notice_marca_not_destroy: 'A marca nao foi exluida'
+  are_you_sure_destroy_marca: 'Voce está seguro de excluir a marca'
+
+ 
+# Modelo
+  modelo: 'Modelo'
+  modelos: 'Modelos'
+  new_modelo: 'Novo modelo'
+  listing_modelos: 'Lista de modelos de Telefone'
+  editing_modelo: 'Editando o modelo'
+  nome_modelo: 'Nome do modelo'
+  nome_modelo_abr: 'Modelo'
+  notice_modelo_create: 'O modelo foi criado com sucesso'
+  notice_modelo_update: 'O modelo foi atualizado com sucesso'
+  notice_modelo_destroy: 'O modelo foi exluido com sucesso'
+  notice_modelo_not_destroy: 'O modelo nao foi exluido'
+  are_you_sure_destroy_modelo: 'Voce está seguro de excluir o modelo'
+
+# Cliente
+  cliente: 'Cliente'
+  clientes: 'Clientes'
+  new_cliente: 'Novo cliente'
+  listing_clientes: 'Lista de clientes'
+  editing_cliente: 'Editando o cliente'
+  nome_cliente: 'Nome do Cliente'
+  nome_cliente_abr: 'Cliente'
+  cpf: 'CPF'
+  cpf_cliente: 'CPF do Cliente:'
+  verificar: 'verificar'
+  email: 'Email'
+  notice_cliente_create: 'O cliente foi criado com sucesso'
+  notice_cliente_update: 'O cliente foi atualizado com sucesso'
+  notice_cliente_destroy: 'O cliente foi exluido com sucesso'
+  notice_cliente_not_destroy: 'O cliente nao foi exluido'
+  are_you_sure_destroy_cliente: 'Voce está seguro de excluir o cliente'
+
+# Assinatura
+  assinatura: 'Assinatura'
+  assinaturas: 'Assinaturas'
+  new_assinatura: 'Nova assinatura'
+  listing_assinaturas: 'Lista de assinaturas'
+  editing_assinatura: 'Editando a assinatura'
+  imei: 'IMEI'
+  preco_anual: 'Preco Anual'
+  num_parcelas: 'Parcelas'
+  data_emisao: 'Data de Emissao'
+  data_vencimento: 'Data de Vencimento'
+  status: 'Estatus'
+  notice_assinatura_create: 'A assinatura foi criada com sucesso'
+  notice_assinatura_update: 'A assinatura foi atualizada com sucesso'
+  notice_assinatura_destroy: 'A assinatura foi exluida com sucesso'
+  notice_assinatura_not_destroy: 'A assinatura nao foi exluida'
+  are_you_sure_destroy_assinatura: 'Voce está seguro de excluir a assinatura'
+ 
+
+
+  # Buttoms
+  add: 'Agregar'
+  edit: 'Editar'
+  show: 'Mostrar'
+  destroy: 'Excluir'
+  update: 'Atualizar'
+  back: 'Voltar'
+  return: 'Retornar'
+  cancel: 'Cancelar'
+  save: 'Guardar'
+  select: 'Selecionar'
+  send: "Enviar"
+
+  # Menus
+  dashboard: 'Painel de Controle'
+  home: 'Board'
+  user: 'Usuário'
+  profile: 'Perfil'
+  sistema: 'Pitzi-Assinaturas'

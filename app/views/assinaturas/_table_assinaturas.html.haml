@@ -1,0 +1,46 @@
+.table-responsive
+  %table.table.table-striped.table-bordered.table-hover#dttb
+    %thead
+      %tr
+        %th
+          =I18n.t(:nome_cliente_abr)
+        %th
+          =I18n.t(:nome_marca_abr)
+        %th
+          =I18n.t(:nome_modelo_abr)
+        %th
+          =I18n.t(:imei)
+        %th
+          =I18n.t(:preco_anual)
+        %th
+          =I18n.t(:num_parcelas)
+        %th
+          =I18n.t(:data_emisao)
+        %th
+          =I18n.t(:data_vencimento)
+        %th
+          =I18n.t(:status)
+        %th
+
+    %tbody
+      - @assinaturas.each do |assinatura|
+        %tr
+          - cliente_nome = Cliente.find(assinatura['cliente_id']).nome 
+          - modelo = Modelo.find(assinatura['modelo_id']) 
+          - marca_nome = Marca.find(modelo.marca_id).nome
+          %td= cliente_nome
+          %td= marca_nome
+          %td= modelo.nome
+          %td= assinatura['imei']
+          %td= assinatura['preco_anual']
+          %td= assinatura['num_parcelas']
+          %td= assinatura['data_emisao']
+          %td= assinatura['data_vencimento']
+          %td= assinatura['status']
+          %td
+            /= link_to edit_assinatura_path(assinatura) do
+            /  %i.fa.fa-pencil
+            /  &nbsp;
+            /= link_to assinatura, data: { confirm: I18n.t(:are_you_sure_destroy_assinatura) }, method: :delete do
+            /  %i.fa.fa-trash
+

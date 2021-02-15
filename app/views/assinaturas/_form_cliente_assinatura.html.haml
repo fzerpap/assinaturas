@@ -1,0 +1,59 @@
+= form_for @assinatura, html: { class: "form-horizontal", role: "form", id: 'form-cliente-assinatura' } do |f|
+  -if @assinatura.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@assinatura.errors.count, "error")} prohibited this assinatura from being saved:"
+
+      %ul
+        - @assinatura.errors.full_messages.each do |msg|
+          %li= msg
+  / Campos do formulario Cliente
+  %h3 Dados do Cliente
+  .form-group
+    = label_tag :cpf, I18n.t(:cpf_cliente), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = number_field_tag :cpf, "", class: 'form-control'
+  .form-group
+    = label_tag :nome, I18n.t(:nome_cliente), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = text_field_tag :nome, '', class: 'form-control'
+  .form-group
+    = label_tag :email, I18n.t(:email), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = text_field_tag :email, "", class: 'form-control'
+  / Campos do formulario Assinatura
+  %h3 Dados da Assinatura
+  .form-group
+    = label_tag :marca, I18n.t(:nome_marca), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = select_tag :marca_id, options_from_collection_for_select(Marca.all, :id, :nome), { include_blank: true, class: 'form-control', id: 'select-marca'}
+  .box{style: 'display: none'}
+    .form-group
+      = f.label I18n.t(:nome_modelo), class: 'col-sm-2 control-label'
+      .col-sm-4
+        = f.select :modelo_id, options_from_collection_for_select(Modelo.all, :id, :nome, selected: f.object.modelo.present? ? f.object.modelo.id : nil), { include_blank: true }, {class: 'form-control', id: 'select-modelo'}
+  .form-group
+    = f.label I18n.t(:imei), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :imei, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:preco_anual), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.number_field :preco_anual, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:num_parcelas), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.number_field :num_parcelas, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:data_emisao), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.date_field :data_emisao, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:data_vencimento), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.date_field :data_vencimento, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit class: 'btn btn-primary'

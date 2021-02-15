@@ -1,0 +1,7 @@
+.page-header
+  = link_to search_cliente_path, class: 'btn btn-primary', id: 'form-search-cliente' do
+    %span.glyphicon.glyphicon-plus
+    =I18n.t(:new_assinatura)
+  %h1
+    =I18n.t(:listing_assinaturas)
+= render 'table_assinaturas'    

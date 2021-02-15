@@ -1,0 +1,26 @@
+= form_for @cliente, html: { class: "form-horizontal", role: "form", id: 'form-cliente' } do |f|
+  -if @cliente.errors.any?
+    .alert.alert-danger.alert-dismissable{role: "alert"}
+      %button.close{type: "button", data: {dismiss: "alert"} }
+        %span{aria: {hidden: "true"} } &times;
+        %span.sr-only Close
+      %h4= "#{pluralize(@cliente.errors.count, "error")} prohibited this cliente from being saved:"
+
+      %ul
+        - @cliente.errors.full_messages.each do |msg|
+          %li= msg
+  .form-group
+    = f.label I18n.t(:cpf), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.number_field :cpf, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:nome_cliente), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :nome, class: 'form-control'
+  .form-group
+    = f.label I18n.t(:email), class: 'col-sm-2 control-label'
+    .col-sm-4
+      = f.text_field :email, class: 'form-control'
+  .form-group
+    .col-sm-offset-2.col-sm-4
+      = f.submit class: 'btn btn-primary'

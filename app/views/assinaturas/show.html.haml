@@ -1,0 +1,26 @@
+.page-header
+  = link_to assinaturas_path, class: 'btn btn-default' do
+    %span.glyphicon.glyphicon-list-alt
+    Back
+  = link_to edit_assinatura_path(@assinatura), class: 'btn btn-primary' do
+    %span.glyphicon.glyphicon-pencil
+    Edit
+  %h1 Show assinatura
+
+%dl.dl-horizontal
+  %dt Imei:
+  %dd= @assinatura.imei
+  %dt Preco anual:
+  %dd= @assinatura.preco_anual
+  %dt Num parcelas:
+  %dd= @assinatura.num_parcelas
+  %dt Status:
+  %dd= @assinatura.status
+  %dt Data emisao:
+  %dd= @assinatura.data_emisao
+  %dt Data vencimento:
+  %dd= @assinatura.data_vencimento
+  %dt Modelo:
+  %dd= @assinatura.modelo_id
+  %dt Cliente:
+  %dd= @assinatura.cliente_id
